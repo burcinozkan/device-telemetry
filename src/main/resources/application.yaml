@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: device-telemetry-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/telemetry
+    username: telemetry
+    password: telemetry
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6380
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: telemetry-processor
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+telemetry:
+  kafka:
+    topic: device-telemetry-events
+  redis:
+    device-state-prefix: "device:state:"
+    device-state-ttl-minutes: 30
+  alerts:
+    high-power-threshold-watts: 2500
+    high-temperature-threshold-celsius: 90
+    high-water-usage-liters: 80
+
+
+server:
+  port: 8090
+
+logging:
+  level:
+    com.telemetry: INFO
