@@ -5,5 +5,7 @@ public enum DeviceType {
     DISHWASHER,
     REFRIGERATOR,
     OVEN,
-    DRYER
+    DRYER,
+
+
 }
