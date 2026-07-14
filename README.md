@@ -168,5 +168,4 @@ com.telemetry
 6. Return `202 Accepted`  
 7. Consumer analyzes rules → writes alerts  
 
-Redis answers “what is the device doing now?”  
-Kafka answers “who should process this event next?”
+
