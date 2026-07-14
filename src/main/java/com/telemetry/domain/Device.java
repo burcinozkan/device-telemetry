@@ -41,6 +41,9 @@ public class Device {
     @Column(nullable = false, updatable = false)
     private Instant registeredAt;
 
+    @Column(nullable = false)
+    private Instant lastSeenAt;
+
     @PrePersist
     void onCreate(){
         if (registeredAt == null){

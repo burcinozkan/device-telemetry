@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -48,6 +49,7 @@ public class DeviceService {
                 .name(request.name())
                 .type(request.type())
                 .ownerId(request.ownerId())
+                .lastSeenAt(Instant.now())
                 .location(request.location())
                 .status(DeviceStatus.OFFLINE)
                 .build();
