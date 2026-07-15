@@ -143,17 +143,51 @@ Thresholds are configurable in `application.yaml` under `telemetry.alerts`.
 
 ---
 
+##  Grafana Dashboard
+
+This project includes a pre-configured Grafana dashboard for monitoring telemetry data.
+
+### Dashboard Features
+
+-  Power Consumption Trend
+-  Temperature Trend
+-  Active Alerts
+-  Total Events & Devices
+-  Average Power
+-  Latest Alerts
+
+### Import Dashboard
+
+1. Open Grafana
+2. Go to **Dashboards → Import**
+3. Upload:
+
+```text
+grafana/dashboards/device-telemetry-dashboard.json
+```
+
+or paste the dashboard JSON manually.
+
+## Dashboard Preview
+
+![Dashboard](src/docs/dashboard.png)
+
+
 ## Project structure
 
 ```
-com.telemetry
-├── controller/     # REST API
-├── service/        # business logic + alert/
-├── kafka/          # producer + consumer
-├── domain/         # JPA entities + enums
-├── dto/            # request/response records
-├── repository/     # Spring Data JPA
-└── config/         # OpenAPI, etc.
+device-telemetry-service
+│
+├── README.md
+├── docker-compose.yml
+├── scripts/
+│   └── populate-demo.ps1
+├── grafana/
+│   └── dashboards/
+│       └── device-telemetry-dashboard.json
+└── docs/
+    ├── dashboard.png
+   
 ```
 
 ---
