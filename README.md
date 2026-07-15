@@ -1,5 +1,7 @@
 # Device Telemetry Service
 
+[![Java CI](https://github.com/burcinozkan/device-telemetry/actions/workflows/ci.yml/badge.svg)](https://github.com/burcinozkan/device-telemetry/actions/workflows/ci.yml)
+
 HomeWhiz-style IoT telemetry backend for connected home appliances.
 
 Devices send status/sensor events over HTTP. The service:
